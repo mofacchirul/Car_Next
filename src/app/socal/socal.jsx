@@ -1,20 +1,28 @@
-import { signIn } from 'next-auth/react';
+"use client"
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 
 const Socal = () => {
     const router = useRouter()
-    const Handlesocal=async(socalname) =>{
-const result = await signIn(socalname,{redirect: false})
-if(result.ok){
-    router.push("/")
-    toast.success('logged in successfully',{
-        position: "top-right"
-      })
-}
-
+    const session=useSession()
+    const Handlesocal=(socalname) =>{
+     signIn(socalname,{ callbackUrl: "/" })
     }
+useEffect(()=>{
+    if(session?.status==="authenticated"){
+        toast.success("Login Success")
+        router.push("/")
+    }
+
+},[session?.status])
+
+
+
+
+
     return (
         <div className='flex gap-2 py-3'>
             <button onClick={()=>Handlesocal("gitHub")} className="btn bg-black text-white border-black">

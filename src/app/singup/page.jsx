@@ -29,7 +29,7 @@ const Singuppage = () => {
     };
 
     return (
-        <div className='border border-gray-500 p-3 w-full  rounded-2xl max-w-lg mx-auto flex flex-col items-center   justify-center'>
+        <div className='border pmy-16 border-gray-500 p-3 w-full  rounded-2xl max-w-lg mx-auto flex flex-col items-center   justify-center'>
            <h2 className="text-2xl font-bold mb-6 text-center">Register</h2> 
             <form onSubmit={handlesingup} className=""> 
              
@@ -70,10 +70,7 @@ const Singuppage = () => {
                 <button type="submit" className="w-full h-12 mt-4 bg-[#FF3811] rounded-3xl text-white font-bold">
                     Sign Up
                 </button>
-                 {/* <Socal>
-                        
-                        </Socal> */}
-              
+          
             </form> 
             <div>
             <p className="text-center ">Or Sign In with</p>
