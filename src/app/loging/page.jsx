@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { signIn } from "next-auth/react";
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import Socal from '../socal/socal';
 
 const loging = () => {
     const router = useRouter()
@@ -13,7 +14,7 @@ const loging = () => {
 try{
     await signIn("credentials", {email,password, redirect: false})
     router.push("/")
-    toast.success("loging Successfully ",{
+    toast.success("logged in successfully!",{
         position: "top-right"
       })
 }
@@ -69,7 +70,7 @@ try{
             <div>
 
             <p className="text-center">Or Sign In with</p>
-                {/* <SocialLogin /> */}
+            <Socal></Socal>
                 <p className="text-center">
                     Don't have an account?{" "}
                     <Link href="/singup" className="text-[#FF3811] font-bold">

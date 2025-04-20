@@ -2,6 +2,7 @@
 import React from 'react';
 import { resisterUser } from '../actions/Auth/resisterUser';
 import Link from 'next/link';
+import Socal from '../socal/socal';
 
 
 
@@ -14,9 +15,16 @@ const Singuppage = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-       await resisterUser({ name, email, password });
+        try {
+            await resisterUser({ name, email, password });
+            toast.success("logged in successfully!",{
+                position: "top-right"
+              });
+            e.target.reset();
+        } catch (error) {
 
-       e.target.reset();
+            toast.error("Something went wrong. Please try again.");
+        }
     
     };
 
@@ -69,7 +77,7 @@ const Singuppage = () => {
             </form> 
             <div>
             <p className="text-center ">Or Sign In with</p>
-     
+            <Socal></Socal>
      <p className="text-center">
          Don't Have an account?{" "}
          <Link href="/loging" className="text-[#FF3811] font-bold">
