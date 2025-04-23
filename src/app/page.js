@@ -3,8 +3,7 @@ import Service from "./compones/service";
 
 export default function Home() {
   return (
-  <div>
-    
+  <div> 
       <Service></Service>
   </div>
   );

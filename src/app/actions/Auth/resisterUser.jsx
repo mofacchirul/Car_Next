@@ -18,7 +18,7 @@ const result = await usercollection.insertOne(payload);
 const {acknowledged,insertedId}=result;
 return {
     acknowledged,
-    insertedId: insertedId.toString() // <-- এখানে string এ convert করা হয়েছে
+    insertedId: insertedId.toString()
 };
   }
 
