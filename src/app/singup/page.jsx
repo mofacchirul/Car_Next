@@ -3,6 +3,7 @@ import React from 'react';
 import { resisterUser } from '../actions/Auth/resisterUser';
 import Link from 'next/link';
 import Socal from '../socal/socal';
+import { toast } from 'react-toastify';
 
 
 
