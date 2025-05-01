@@ -4,8 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 import { GoArrowRight } from "react-icons/go";
 const Service = async () => {
-    
-   
     const servicedata = bdconnect(collectionObj.servicecollection) ;
     const data = await servicedata.find({}).toArray();
     return (

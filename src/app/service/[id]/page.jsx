@@ -4,9 +4,11 @@ import Link from "next/link";
 
 const Sevicedetels = async ({ params }) => {
   const p = await params;
-  const servicedata = bdconnect(collectionObj.servicecollection);
-  const data = await servicedata.findOne({ service_id: p.id });
 
+const res = await fetch(`http://localhost:3000/api/service/${p.id}`) 
+const data = await res.json()
+
+  
   return (
     <div>
        <div className="relative">
@@ -56,7 +58,7 @@ const Sevicedetels = async ({ params }) => {
 
         {/* Back to Home Button */}
         <div className="mt-8 text-center">
-                 <Link href={`/cheackout/${data._id}`}>
+                 <Link href={`/cheakout/${data._id}`}>
                  <button className="btn btn-block bg-red-500 text-white text-xl">cheakout</button>
                  </Link>
                 </div>
